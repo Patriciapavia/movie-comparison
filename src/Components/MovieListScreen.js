@@ -27,12 +27,10 @@ const MovieListScreen = ({ movie }) => {
 							alt='green iguana'
 						/>
 						<CardContent>
-							<Typography gutterBottom variant='h5' component='div'>
+							<Typography gutterBottom variant='h6' component='div'>
 								{movie.Title}
 							</Typography>
-							<Typography variant='body2' color='text.secondary'>
-								{movie.Actors}
-							</Typography>
+						
 							<Grid container spacing={4}>
 								<Grid item xs={6} md={6} lg={6}>
 									Cinemaworld
