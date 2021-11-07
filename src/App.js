@@ -35,7 +35,7 @@ function App() {
 				}}
 			>
 				<Item>
-					<h1>Prince's theater</h1>
+					<h1>Prince's theatre</h1>
 					<h5>Classic Movies At Home</h5>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
