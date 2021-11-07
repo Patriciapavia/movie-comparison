@@ -36,7 +36,6 @@ const MovieListScreen = ({ movie }) => {
 									Cinemaworld
 								</Grid>
 								<Grid item xs={6} md={6} lg={6}>
-									${}
 								</Grid>
 							</Grid>
 							<Grid container spacing={4}>

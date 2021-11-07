@@ -27,6 +27,9 @@ export const fetchMoviesAction = () => async (dispatch) => {
 		const moviesFilmworld = dataFilmworld.data.Movies;
 		const moviesCinemaworld = dataCinemaworld.data.Movies;
 
+		//to do here is loop through two array of moviesFilmworld and moviesCinemaworld
+		//and return a new array with id and price 
+
 		dispatch({
 			type: FETCH_MOVIE_SUCCESS,
 			payload: [...moviesCinemaworld, ...moviesFilmworld],
