@@ -26,13 +26,26 @@ export const fetchMoviesAction = () => async (dispatch) => {
 		);
 		const moviesFilmworld = dataFilmworld.data.Movies;
 		const moviesCinemaworld = dataCinemaworld.data.Movies;
-
-		//to do here is loop through two array of moviesFilmworld and moviesCinemaworld
-		//and return a new array with id and price 
-
+// loop through two array and create a new array with array of price 
+//so can make a price comparison
+		let lists = [];
+		for (let i = 0; i < moviesFilmworld.length; i++) {
+			for (let y = 0; y < moviesCinemaworld.length; y++) {
+				if (moviesFilmworld[i].Title === moviesCinemaworld[y].Title) {
+					lists.push({
+						id: moviesFilmworld[i].ID,
+						title: moviesFilmworld[i].Title,
+						poster: moviesFilmworld[i].Poster,
+						actors: moviesFilmworld[i].Actors,
+						price: [moviesFilmworld[i].Price, moviesCinemaworld[y].Price],
+					});
+				}
+			}
+		}
+	
 		dispatch({
 			type: FETCH_MOVIE_SUCCESS,
-			payload: [...moviesCinemaworld, ...moviesFilmworld],
+			payload: lists
 		});
 	} catch (error) {
 		dispatch({
