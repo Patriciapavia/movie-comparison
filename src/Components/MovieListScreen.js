@@ -15,6 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 	color: theme.palette.text.secondary,
 }));
 const MovieListScreen = ({ movie }) => {
+	
 	return (
 		<React.Fragment>
 			<Grid item xs={6} md={4} lg={3}>
@@ -23,27 +24,42 @@ const MovieListScreen = ({ movie }) => {
 						<CardMedia
 							component='img'
 							height='200'
-							image={movie.Poster}
-							alt='green iguana'
+							image={movie.poster}
+							alt='poster'
 						/>
 						<CardContent>
-							<Typography gutterBottom variant='h6' component='div'>
-								{movie.Title}
+							<Typography variant='body1'>
+								{movie.title}
 							</Typography>
-						
+
 							<Grid container spacing={4}>
 								<Grid item xs={6} md={6} lg={6}>
+									<Typography variant='body2'>
 									Cinemaworld
+									</Typography>
 								</Grid>
 								<Grid item xs={6} md={6} lg={6}>
+									{movie.price[1] > movie.price[0] ? (
+										<Typography variant='body2' color='error'>
+											${movie.price[1]}{' '}
+										</Typography>
+									) : (
+										<Typography variant='body2'>${movie.price[1]} </Typography>
+									)}
 								</Grid>
 							</Grid>
 							<Grid container spacing={4}>
 								<Grid item xs={6} md={6} lg={6}>
-									Filmworld
+									<Typography variant='body2'>FilmWorld</Typography>
 								</Grid>
 								<Grid item xs={6} md={6} lg={6}>
-									${movie.Price}
+									{movie.price[0] > movie.price[1] ? (
+										<Typography variant='body2' color='error'>
+											${movie.price[0]}{' '}
+										</Typography>
+									) : (
+										<Typography variant='body2'>${movie.price[0]} </Typography>
+									)}
 								</Grid>
 							</Grid>
 						</CardContent>
