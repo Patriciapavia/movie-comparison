@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMoviesAction } from '../actions/fetMovieActions';
-import MovieListScreen from './MovieListScreen';
-import Loader from './Loader';
-import { Grid } from '@mui/material';
-import Message from './Message';
-
-const MovieScreen = () => {
+import { fetchMoviesAction } from '../../actions/fetMovieActions';
+import MovieListScreen from '../MovieLists/MovieListScreen';
+import Loader from '../Loader';
+import Message from '../Message';
+import './MovieResultScreen.css';
+const MovieResultScreen = () => {
 	const dispatch = useDispatch();
 	const movieLists = useSelector((state) => state.movieList);
 	const { loading, error, movies } = movieLists;
@@ -17,14 +16,19 @@ const MovieScreen = () => {
 
 	return (
 		<React.Fragment>
+			< div className="heading">
+				<h1>Prince's theatre</h1>
+				<h5>Classic Movies At Home</h5>
+				<p>Where you can search and compare a cheaper provider</p>
+			</div>
 			{loading ? (
 				<Loader />
 			) : movies ? (
-				<Grid container spacing={2}>
+				<div className='result'>
 					{movies.map((movie) => (
 						<MovieListScreen movie={movie} key={movie.ID} />
 					))}
-				</Grid>
+				</div>
 			) : (
 				<Message>{error}</Message>
 			)}
@@ -32,4 +36,4 @@ const MovieScreen = () => {
 	);
 };
 
-export default MovieScreen;
+export default MovieResultScreen;
