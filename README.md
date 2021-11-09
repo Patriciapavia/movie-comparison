@@ -21,7 +21,7 @@ I started out with building a react component and rendering out the movie list.T
 
 I could first think of what the core problem is and plan what to do first so I would solve the same problem with less amount of time
 
-# Techstack and why I use it
+# Tech stack and why I use it
 
 ## react with redux
 because states will no longer need to be lifted up. it is makes it easier to trace which action causes any change. The component does not need to provide any state or method for its children components to share data among themselves.
